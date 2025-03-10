@@ -6,9 +6,9 @@ int main() {
 
 //Variáveis da 1ª Carta.
 
-    int pontost1, atributo;
+    int pontost1, atributo1, atributo2;
     unsigned long int populacao1;
-    float area1, pib1, dp1, pibp1, superp1, indp1;
+    float area1, pib1, dp1, pibp1, superp1, indp1,  resultado1at1, resultado2at1, resultado1at2, resultado2at2,resultado1, resultado2, resultadof;
     char pais1[30], estado1[20], cidade1[20], codigo1[20];
 
 //Variáveis da 2ª Carta.
@@ -163,95 +163,180 @@ int main() {
 
     printf("Comparação de cartas (Atributo):\n\n");
 
-    printf("Escolha qual atributo deseja comparar:\n\n");
+    printf("Escolha qual o primeiro atributo deseja comparar:\n\n");
     printf("1 - População.\n");
     printf("2 - Área.\n");
     printf("3 - PIB.\n");
     printf("4 - Número de pontos turísticos.\n");
     printf("5 - Densidade demográfica.\n");
 
-    scanf("%d", &atributo);
+    scanf("%d", &atributo1);
 
-    printf("Resultado - Comparação:\n\n");
-    printf("Países: %s - %s\n", pais1, pais2);
+//Escolha do 1º Atrinuto.
 
-    switch (atributo)
+    switch (atributo1)
     {
     case 1:
-        printf("População: %d - %d\n", populacao1, populacao2);
-        printf("Atributo: População.\n");
-
-        if (populacao1 > populacao2)
-        {
-            printf("1ª Carta - Venceu!\n");
-        }else if (populacao1 < populacao2)
-        {
-            printf("2ª Carta - Venceu!\n");
-        }else{
-            printf("Empate!");
-        }
+        printf("1º - Atributo: População.\n");
+        resultado1at1 = populacao1;
+        resultado2at1 = populacao2;
     break;
+
     case 2:
-        printf("Área: %.3f - %.3f\n", area1, area2);
-        printf("Atributo: Área.\n");
-
-        if (area1 > area2)
-        {
-            printf("1ª Carta - Venceu!\n");
-        }else if (area1 < area2)
-        {
-            printf("2ª Carta - Venceu!\n");
-        }else{
-            printf("Empate!");
-        }
+        printf("1º - Atributo: Área.\n");
+        resultado1at1 = area1;
+        resultado2at1 = area2;
     break;
+
     case 3:
-        printf("PIB: %.3f - %.3f\n", pib1, pib2);
-        printf("Atributo: PIB.\n");
-
-        if (pib1 > pib2)
-        {
-            printf("1ª Carta - Venceu!\n");
-        }else if (pib1 < pib2)
-        {
-            printf("2ª Carta - Venceu!\n");
-        }else{
-            printf("Empate!");
-        }
+        printf("1º - Atributo: PIB.\n");
+        resultado1at1 = pib1;
+        resultado2at1 = pib2;
     break;
+
     case 4:
-        printf("Número de pontos turísticos: %d - %d\n", pontost1, pontost2);
-        printf("Atributo: Número de pontos turísticos.\n");
-
-        if (pontost1 > pontost2)
-        {
-            printf("1ª Carta - Venceu!\n");
-        }else if (pontost1 < pontost2)
-        {
-            printf("2ª Carta - Venceu!\n");
-        }else{
-            printf("Empate!");
-        }
+        printf("1º - Atributo: Número de pontos turísticos.\n");
+        resultado1at1 = pontost1;
+        resultado2at1 = pontost2;
     break;
-    case 5:
-        printf("Densidade demográfica: %.3f - %.3f\n", dp1, dp2);
-        printf("Atributo: Densidade demográfica.\n");
 
-        if (dp1 < dp2)
-        {
-            printf("1ª Carta - Venceu!\n");
-        }else if (dp1 > dp2)
-        {
-            printf("2ª Carta - Venceu!\n");
-        }else{
-            printf("Empate!");
-        }
+    case 5:
+        printf("1º - Atributo: Densidade demográfica.\n");
+        resultado1at1 = dp1;
+        resultado2at1 = dp2;
     break;
 
     default:
         printf("Opção Inválida.\n");
         break;
-    
     }
+
+//Escolha do 2º Atrinuto.
+
+printf("Escolha qual o segundo atributo deseja comparar:\n\n");
+    printf("1 - População.\n");
+    printf("2 - Área.\n");
+    printf("3 - PIB.\n");
+    printf("4 - Número de pontos turísticos.\n");
+    printf("5 - Densidade demográfica.\n");
+
+    scanf("%d", &atributo2);
+
+    if (atributo1 == atributo2)
+    {
+        printf("Mesmo atributo escolhido.\n");
+    }else {
+
+    switch (atributo2)
+        {
+    case 1:
+        printf("2º - Atributo: População.\n");
+        resultado1at2 = populacao1;
+        resultado2at2 = populacao2;
+    break;
+    
+    case 2:
+        printf("2º - Atributo: Área.\n");
+        resultado1at2 = area1;
+        resultado2at2 = area2;
+    break;
+    
+    case 3:
+        printf("2º - Atributo: PIB.\n");
+        resultado1at2 = pib1;
+        resultado2at2 = pib2;
+    break;
+    
+    case 4:
+        printf("2º - Atributo: Número de pontos turísticos.\n");
+        resultado1at2 = pontost1;
+        resultado2at2 = pontost2;
+    break;
+    
+    case 5:
+        printf("2º - Atributo: Densidade demográfica.\n");
+        resultado1at2 = dp1;
+        resultado2at2 = dp2;
+    break;
+    
+    default:
+        printf("Opção Inválida.\n");
+    break;
+}
+    }
+//Impressão dos Valores do 1º - Atributo.
+
+    printf("Resultado - Comparação:\n\n");
+    printf("Países: %s - %s\n", pais1, pais2);
+
+    switch (atributo1)
+    {
+    case 1:
+        printf("População: %d - %d\n", populacao1, populacao2);
+    break;
+
+    case 2:
+        printf("Área: %.3f - %.3f\n", area1, area2);
+    break;
+
+    case 3:
+        printf("PIB: %.3f - %.3f\n", pib1, pib2);
+    break;
+
+    case 4:
+        printf("Número de pontos turísticos: %d - %d\n", pontost1, pontost2);
+    break;
+
+    case 5:
+        printf("Densidade demográfica: %.3f - %.3f\n", dp1, dp2);
+    break;
+
+    default:
+    break;
+    }
+
+//Impressão dos Valores do 2º - Atributo.
+    switch (atributo2)
+{
+    case 1:
+        printf("População: %d - %d\n", populacao1, populacao2);
+    break;
+
+    case 2:
+        printf("Área: %.3f - %.3f\n", area1, area2);
+    break;
+
+    case 3:
+        printf("PIB: %.3f - %.3f\n", pib1, pib2);
+    break;
+
+    case 4:
+        printf("Número de pontos turísticos: %d - %d\n", pontost1, pontost2);
+    break;
+
+    case 5:
+        printf("Densidade demográfica: %.3f - %.3f\n", dp1, dp2);
+    break;
+
+    default:
+    break;
+}
+//Resultado da soma dos atributos escolhidos.
+
+    resultado1 = resultado1at1 + resultado1at2;
+    resultado2 = resultado2at1 + resultado2at2;
+
+    printf("Soma dos Pontos: %.3f - %.3f\n", resultado1, resultado2);
+
+    if (resultado1 > resultado2)
+    {
+        printf("1ª Carta - Venceu!.\n");
+    }else if (resultado1 < resultado2)
+    {
+        printf("2ª Carta - Venceu!.\n");
+    }else {
+        printf("Empate!\n");
+    }
+    
   return 0;
 }
