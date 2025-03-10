@@ -249,6 +249,7 @@ int main() {
     break;
 
     default:
+        printf("Opção Inválida.\n");
         break;
     
     }
